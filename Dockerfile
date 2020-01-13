@@ -1,21 +1,23 @@
 ARG version=dev
 FROM ocamlsf/learn-ocaml-client:${version}
 
+WORKDIR /home/learn-ocaml
+
 USER root
 
 RUN apk add --no-cache \
   curl \
   emacs-nox \
-  && mkdir -p -v /learnocaml/bin \
-  && chown -v learn-ocaml:learn-ocaml /learnocaml/bin
+  && mkdir -p -v bin \
+  && chown -v learn-ocaml:learn-ocaml bin
 
-ENV PATH /learnocaml/bin:${PATH}
+ENV PATH /home/learn-ocaml/bin:${PATH}
 
 ENV LANG C.UTF-8
 # ENV LC_ALL C.UTF-8
 # ENV LANGUAGE en_US:en
 
-COPY --chown=learn-ocaml:learn-ocaml .emacs /home/learn-ocaml/.emacs
+COPY --chown=learn-ocaml:learn-ocaml .emacs .emacs
 
 USER learn-ocaml
 
