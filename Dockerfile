@@ -1,4 +1,4 @@
-ARG version=dev
+ARG version=0.12
 FROM ocamlsf/learn-ocaml-client:${version}
 
 WORKDIR /home/learn-ocaml
