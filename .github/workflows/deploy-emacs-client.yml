@@ -19,7 +19,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           path: ci/docker-emacs-learn-ocaml-client
-          build_args: "base=pfitaxel/learn-ocaml-client,version=${{ steps.branch.outputs.branch }}"
+          build_args: "base=ocamlsf/learn-ocaml-client,version=${{ steps.branch.outputs.branch }}"
           always_pull: true
           add_git_labels: true
           labels: "org.opencontainers.image.version=${{ steps.branch.outputs.branch }}"
