@@ -6,7 +6,6 @@ on:
 jobs:
   push_emacs_client:
     name: Push emacs-learn-ocaml-client image to Docker Hub
-    needs: push_client
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
