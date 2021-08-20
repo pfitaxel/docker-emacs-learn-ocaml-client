@@ -1,13 +1,16 @@
+ARG base=ocamlsf/learn-ocaml-client
 ARG version=master
-FROM ocamlsf/learn-ocaml-client:${version}
+FROM ${base}:${version}
 
 WORKDIR /home/learn-ocaml
 
 USER root
 
 RUN apk add --no-cache \
+  bash \
   curl \
   emacs-nox \
+  make \
   && mkdir -p -v bin \
   && chown -v learn-ocaml:learn-ocaml bin
 
